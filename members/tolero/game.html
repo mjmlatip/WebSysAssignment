@@ -21,7 +21,7 @@
   <script>
     let answer = "";
     async function loadPokemon() {
-      const id = Math.floor(Math.random() * 151) + 1;
+      const id = Math.floor(Math.random() * 1025) + 1;
       const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
       const data = await res.json();
       answer = data.name.toLowerCase();
@@ -32,9 +32,10 @@
       document.getElementById("guess").value = "";
     }
     function checkGuess() {
-      const val = document.getElementById("guess").value.trim().toLowerCase();
+      const val = document.getElementById("guess").value.trim().toLowerCase().replace(/[\s-]/g, "");
+      const cleanAnswer = answer.replace(/[\s-]/g, "");
       document.getElementById("pokeImg").classList.add("revealed");
-      document.getElementById("msg").textContent = val === answer
+      document.getElementById("msg").textContent = val === cleanAnswer
         ? `Correct! It's ${answer.toUpperCase()}!`
         : `Nice try! It was ${answer.toUpperCase()}.`;
       setTimeout(loadPokemon, 2000);

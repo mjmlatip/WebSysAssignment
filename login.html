@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="login-page">
+    
+    <header class="site-header">
+        <nav class="navbar">
+            <a class="logo" href="index.html">Blue<span>Horizon</span></a>
+            <a class="back-link" href="index.html">← Back to home</a>
+        </nav>
+    </header>
+
+    <main class="login-main">
+        <section class="login-box">
+            
+            <p class="label">Welcome back</p>
+            <h1>Log in to your account</h1>
+            <p class="muted-text">Join the Blue Horizon community.</p>
+            <form class="simple-form" onsubmit="login(); return false;">
+                <label for="loginEmail">Username</label>
+                <input type="text" id="loginEmail" required>
+                <label for="loginPassword">Password</label>
+                <input type="password" id="loginPassword" required>
+                <button class="button full-button" type="submit">Login</button>
+                <p class="form-message" id="loginMessage"></p>
+            </form>
+            <p class="small-text">Demo page only — no real account is created.</p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

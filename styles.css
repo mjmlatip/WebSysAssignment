@@ -1,0 +1,371 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+/* Basic page styles */
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background-color: #fffdf8;
+    color: #17364b;
+    font-family: 'DM Sans', sans-serif;
+    line-height: 1.6;
+}
+
+h1,
+h2,
+h3 {
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+}
+
+h1 {
+    margin: 10px 0 20px;
+    font-size: 4rem;
+}
+
+h2 {
+    margin: 10px 0 20px;
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.35rem;
+}
+
+p {
+    margin: 0 0 18px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Navigation */
+
+.site-header {
+    background-color: white;
+    border-bottom: 1px solid #e6eff1;
+}
+
+.navbar {
+    max-width: 1150px;
+    min-height: 76px;
+    margin: auto;
+    padding: 0 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    color: #082c4c;
+    font-size: 1.35rem;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #087e9e;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    color: #6b8190;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    color: #087e9e;
+}
+
+.nav-login {
+    padding: 9px 18px;
+    border: 1px solid #087e9e;
+    border-radius: 30px;
+    color: #087e9e !important;
+}
+
+/* Buttons and small text */
+
+.button {
+    display: inline-block;
+    padding: 13px 24px;
+    border: 0;
+    border-radius: 30px;
+    background-color: #087e9e;
+    color: white;
+    font: inherit;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #082c4c;
+}
+
+.button-light {
+    background-color: white;
+    color: #082c4c;
+}
+
+.label {
+    margin-bottom: 10px;
+    color: #087e9e;
+    font-size: 0.75rem;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.label.light {
+    color: #a7e9ef;
+}
+
+.muted-text,
+.info-card p,
+.member-info p {
+    color: #6b8190;
+}
+
+/* Home page */
+
+.hero {
+    min-height: 650px;
+    padding: 60px 25px;
+    color: white;
+    background-image:
+        linear-gradient(90deg, rgba(4, 34, 58, 0.92), rgba(4, 34, 58, 0.2)),
+        url('https://images.unsplash.com/photo-1518509562904-e7ef99cdcc86?auto=format&fit=crop&w=1800&q=80');
+    background-position: center;
+    background-size: cover;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    width: 100%;
+    max-width: 1150px;
+    margin: auto;
+}
+
+.hero-content p:not(.label) {
+    max-width: 520px;
+    color: #e5f5f7;
+    font-size: 1.1rem;
+}
+
+.hero h1 span {
+    color: #7edce8;
+}
+
+.section {
+    max-width: 1150px;
+    margin: auto;
+    padding: 90px 25px;
+}
+
+.section-heading {
+    max-width: 620px;
+    margin-bottom: 40px;
+}
+
+.card-grid,
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+.info-card {
+    padding: 30px;
+    border: 1px solid #e0edef;
+    border-radius: 12px;
+    background-color: white;
+}
+
+.icon {
+    font-size: 2rem;
+}
+
+.blue-section {
+    padding: 65px 25px;
+    background-color: #082c4c;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.blue-section p {
+    color: #c9e2e8;
+}
+
+/* About and contact pages */
+
+.page-banner {
+    padding: 100px 25px;
+    color: white;
+    text-align: center;
+    background-image:
+        linear-gradient(rgba(7, 44, 74, 0.85), rgba(7, 44, 74, 0.85)),
+        url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1600&q=80');
+    background-position: center;
+    background-size: cover;
+}
+
+.page-banner h1 {
+    margin-bottom: 10px;
+}
+
+.page-banner p:last-child {
+    color: #d3eef1;
+}
+
+.about-layout,
+.contact-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+}
+
+.member-card {
+    overflow: hidden;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 8px 25px rgba(8, 44, 76, 0.08);
+}
+
+.member-card:hover {
+    transform: translateY(-4px);
+}
+
+.member-image,
+.profile-photo {
+    min-height: 260px;
+    background-position: center;
+    background-size: cover;
+}
+
+.latip-image {
+    background-image: url('https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?auto=format&fit=crop&w=700&q=80');
+}
+
+.estoperes-image {
+    background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=700&q=80');
+}
+
+.portal-image {
+    background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=700&q=80');
+}
+
+.tolero-image {
+    background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=700&q=80');
+}
+
+.member-info {
+    padding: 20px;
+}
+
+.contact-details p {
+    max-width: 430px;
+}
+
+/* Forms */
+
+.simple-form {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+label {
+    margin-top: 8px;
+    font-weight: bold;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #c9dfe3;
+    border-radius: 6px;
+    color: #17364b;
+    font: inherit;
+}
+
+input:focus,
+textarea:focus {
+    outline: 2px solid #8ad9e0;
+}
+
+.form-message {
+    min-height: 25px;
+    color: #087e9e;
+    font-weight: bold;
+}
+
+/* Login and member pages */
+
+.login-main {
+    min-height: calc(100vh - 77px);
+    padding: 40px 20px;
+    background-color: #e8f7fa;
+
+    display: grid;
+    place-items: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 460px;
+    padding: 45px;
+    border-radius: 12px;
+    background-color: white;
+    box-shadow: 0 10px 30px rgba(8, 44, 76, 0.1);
+}
+
+.full-button {
+    width: 100%;
+    margin-top: 18px;
+}
+
+.small-text {
+    margin-top: 30px;
+    color: #6b8190;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.back-link {
+    color: #087e9e;
+}
+
+.profile-page {
+    max-width: 1000px;
+    min-height: calc(100vh - 77px);
+    margin: auto;
+    padding: 80px 25px;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 60px;
+}
+
+.profile-photo {
+    min-height: 500px;
+    border-radius: 12px;
+}
+
+.profile-content p {
+    max-width: 500px;
+}
+

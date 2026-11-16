@@ -3,15 +3,162 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Estoperes</title>
+    <meta name="theme-color" content="#07111d">
+    <title>Roy Paulo M. Estoperes | About Me</title>
     <link rel="stylesheet" href="../../styles.css">
+    <style>
+        :root { color-scheme: dark; }
+        body { min-height: 100vh; background: radial-gradient(ellipse at 78% 5%, #123354 0, transparent 37%), #07111d; color: #edf5ff; }
+        .profile-wrap { width: min(1080px, calc(100% - 36px)); margin: 0 auto; padding: 66px 0 80px; }
+        .intro-card, .game-card { border: 1px solid rgba(157, 198, 232, .18); background: rgba(12, 28, 45, .82); border-radius: 24px; box-shadow: 0 24px 70px rgba(0, 0, 0, .24); }
+        .intro-card { padding: clamp(28px, 6vw, 68px); position: relative; overflow: hidden; }
+        .intro-layout { display: grid; grid-template-columns: minmax(0, 1fr) minmax(190px, 290px); align-items: center; gap: clamp(28px, 6vw, 70px); position: relative; z-index: 1; }
+        .profile-photo { display: block; width: 100%; aspect-ratio: 1; object-fit: cover; border: 3px solid rgba(97, 218, 200, .72); border-radius: 50%; box-shadow: 0 18px 50px rgba(0, 0, 0, .32), 0 0 0 10px rgba(97, 218, 200, .08); }
+        .intro-card::after { content: '✦'; position: absolute; right: 8%; top: 3%; color: #59d3c1; font-size: 150px; opacity: .08; pointer-events: none; }
+        .eyebrow { color: #61dac8; font-size: .78rem; font-weight: 700; letter-spacing: .18em; text-transform: uppercase; }
+        h1 { max-width: 740px; margin: 14px 0; font-size: clamp(2.5rem, 7vw, 5.2rem); line-height: 1.04; letter-spacing: -.045em; }
+        .lead { max-width: 660px; color: #bdcddd; font-size: clamp(1.05rem, 2vw, 1.22rem); line-height: 1.8; }
+        .traits { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+        .trait { padding: 9px 14px; border: 1px solid rgba(97, 218, 200, .25); border-radius: 999px; background: rgba(97, 218, 200, .08); color: #d5fff8; font-size: .92rem; }
+        .game-card { margin-top: 24px; padding: clamp(22px, 4vw, 38px); }
+        .game-head { display: flex; align-items: end; justify-content: space-between; gap: 16px; margin-bottom: 18px; }
+        h2 { margin: 5px 0 0; font-size: clamp(1.6rem, 4vw, 2.25rem); }
+        .score { color: #b5c7d9; font-size: .95rem; white-space: nowrap; }
+        .score strong { color: #61dac8; font-size: 1.2rem; }
+        .board-shell { padding: 10px; background: #06101a; border: 1px solid #1c344a; border-radius: 16px; }
+        canvas { display: block; width: 100%; max-width: 640px; aspect-ratio: 1; margin: auto; border-radius: 10px; background: #091827; image-rendering: pixelated; touch-action: none; }
+        .game-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 16px; }
+        .game-controls button, .pad button { border: 1px solid #31516b; border-radius: 10px; background: #10283d; color: #eff8ff; font: inherit; cursor: pointer; }
+        .game-controls button { padding: 10px 18px; font-weight: 700; }
+        .game-controls button:hover, .pad button:hover { background: #173b54; }
+        .hint { color: #9eb2c5; font-size: .9rem; }
+        .pad { display: grid; grid-template-columns: repeat(3, 48px); grid-template-rows: repeat(2, 42px); gap: 5px; margin: 18px auto 0; width: max-content; }
+        .pad button { font-size: 1.2rem; }
+        .pad .up { grid-column: 2; }.pad .left { grid-column: 1; grid-row: 2; }.pad .down { grid-column: 2; grid-row: 2; }.pad .right { grid-column: 3; grid-row: 2; }
+        .status { min-height: 1.4em; margin: 10px 0 0; color: #61dac8; text-align: center; }
+        @media (min-width: 760px) { .pad { display: none; } }
+        @media (max-width: 680px) { .intro-layout { grid-template-columns: 1fr; } .profile-photo { width: min(220px, 65%); margin: 0 auto; grid-row: 1; } }
+        @media (max-width: 520px) { .profile-wrap { width: min(100% - 22px, 1080px); padding-top: 36px; } .game-head { align-items: start; flex-direction: column; } }
+    </style>
 </head>
 <body>
     <header class="site-header">
         <nav class="navbar">
             <a class="logo" href="../../index.html">Blue<span>Horizon</span></a>
-            <a class="back-link" href="../../about.html#members">← All members</a>
+            <a class="back-link" href="../../about.html#members">&larr; All members</a>
         </nav>
     </header>
+
+    <main class="profile-wrap">
+        <section class="intro-card" aria-labelledby="intro-title">
+            <div class="intro-layout">
+                <div>
+                    <p class="eyebrow">A little introduction</p>
+                    <h1 id="intro-title">Hey, I’m Roy Paulo M. Estoperes.</h1>
+                    <p class="lead">I’m a third-year Information Systems student who believes the good things in life include a great meal, a proper rest, and getting outside for a walk. I’m a jolly guy, so I’m always happy to bring a little positive energy wherever I go.</p>
+                    <div class="traits" aria-label="A few things about Roy">
+                        <span class="trait">🎓 Information Systems</span>
+                        <span class="trait">🍜 Food enthusiast</span>
+                        <span class="trait">🚶 Walks outdoors</span>
+                        <span class="trait">😄 Jolly by nature</span>
+                    </div>
+                </div>
+                <img class="profile-photo" src="Estoperes.jpg" alt="Photo of Roy Paulo M. Estoperes">
+            </div>
+        </section>
+
+        <section class="game-card" aria-labelledby="game-title">
+            <div class="game-head">
+                <div><p class="eyebrow">Take a quick break</p><h2 id="game-title">Snake</h2></div>
+                <p class="score">Score: <strong id="score">0</strong></p>
+            </div>
+            <div class="board-shell"><canvas id="board" width="600" height="600" aria-label="Snake game board"></canvas></div>
+            <div class="game-controls">
+                <button id="start-button" type="button">Start game</button>
+                <span class="hint">Use arrow keys or WASD. Press Space to pause or resume.</span>
+            </div>
+            <div class="pad" aria-label="Touch controls">
+                <button class="up" data-dir="up" aria-label="Up">▲</button>
+                <button class="left" data-dir="left" aria-label="Left">◀</button>
+                <button class="down" data-dir="down" aria-label="Down">▼</button>
+                <button class="right" data-dir="right" aria-label="Right">▶</button>
+            </div>
+            <p id="status" class="status" aria-live="polite">Press Start game to play.</p>
+        </section>
+    </main>
+
+    <script>
+        (() => {
+            const canvas = document.getElementById('board');
+            const ctx = canvas.getContext('2d');
+            const scoreLabel = document.getElementById('score');
+            const statusLabel = document.getElementById('status');
+            const startButton = document.getElementById('start-button');
+            const cells = 20;
+            const size = canvas.width / cells;
+            let snake, food, direction, queuedDirection, score, timer, state = 'ready';
+
+            function placeFood() {
+                do { food = { x: Math.floor(Math.random() * cells), y: Math.floor(Math.random() * cells) }; }
+                while (snake.some(part => part.x === food.x && part.y === food.y));
+            }
+            function reset() {
+                snake = [{ x: 9, y: 10 }, { x: 8, y: 10 }, { x: 7, y: 10 }];
+                direction = { x: 1, y: 0 }; queuedDirection = direction;
+                score = 0; scoreLabel.textContent = score; placeFood(); draw();
+            }
+            function draw() {
+                ctx.fillStyle = '#091827'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.strokeStyle = 'rgba(131, 168, 195, .07)'; ctx.lineWidth = 1;
+                for (let i = 0; i <= cells; i++) {
+                    ctx.beginPath(); ctx.moveTo(i * size, 0); ctx.lineTo(i * size, canvas.height); ctx.stroke();
+                    ctx.beginPath(); ctx.moveTo(0, i * size); ctx.lineTo(canvas.width, i * size); ctx.stroke();
+                }
+                ctx.fillStyle = '#ffbd69'; ctx.beginPath(); ctx.arc((food.x + .5) * size, (food.y + .5) * size, size * .32, 0, Math.PI * 2); ctx.fill();
+                snake.forEach((part, index) => {
+                    ctx.fillStyle = index === 0 ? '#66ead3' : '#31bda9';
+                    ctx.beginPath(); ctx.roundRect(part.x * size + 2, part.y * size + 2, size - 4, size - 4, size * .25); ctx.fill();
+                });
+                if (state === 'ready' || state === 'paused' || state === 'over') {
+                    ctx.fillStyle = 'rgba(4, 12, 20, .67)'; ctx.fillRect(0, 0, canvas.width, canvas.height);
+                    ctx.fillStyle = '#f1f8ff'; ctx.textAlign = 'center'; ctx.font = '700 30px system-ui';
+                    ctx.fillText(state === 'ready' ? 'Ready when you are' : state === 'paused' ? 'Paused' : 'Game over', canvas.width / 2, canvas.height / 2);
+                }
+            }
+            function step() {
+                direction = queuedDirection;
+                const head = { x: snake[0].x + direction.x, y: snake[0].y + direction.y };
+                const eating = head.x === food.x && head.y === food.y;
+                if (head.x < 0 || head.y < 0 || head.x >= cells || head.y >= cells || snake.slice(0, eating ? undefined : -1).some(part => part.x === head.x && part.y === head.y)) {
+                    clearInterval(timer); state = 'over'; startButton.textContent = 'Play again'; statusLabel.textContent = `Game over! You scored ${score}.`; draw(); return;
+                }
+                snake.unshift(head);
+                if (eating) { score++; scoreLabel.textContent = score; placeFood(); }
+                else snake.pop();
+                draw();
+            }
+            function start() {
+                clearInterval(timer); reset(); state = 'playing'; statusLabel.textContent = 'Enjoy the game!'; startButton.textContent = 'Restart game';
+                draw(); timer = setInterval(step, 125);
+            }
+            function setDirection(name) {
+                const vectors = { up: { x: 0, y: -1 }, down: { x: 0, y: 1 }, left: { x: -1, y: 0 }, right: { x: 1, y: 0 } };
+                const next = vectors[name];
+                if (next && (next.x !== -direction.x || next.y !== -direction.y)) queuedDirection = next;
+            }
+            function togglePause() {
+                if (state === 'playing') { clearInterval(timer); state = 'paused'; statusLabel.textContent = 'Paused. Press Space or Start game to continue.'; startButton.textContent = 'Resume game'; draw(); }
+                else if (state === 'paused') { state = 'playing'; statusLabel.textContent = 'Enjoy the game!'; startButton.textContent = 'Restart game'; draw(); timer = setInterval(step, 125); }
+            }
+            startButton.addEventListener('click', () => state === 'paused' ? togglePause() : start());
+            document.addEventListener('keydown', event => {
+                const keys = { ArrowUp: 'up', w: 'up', W: 'up', ArrowDown: 'down', s: 'down', S: 'down', ArrowLeft: 'left', a: 'left', A: 'left', ArrowRight: 'right', d: 'right', D: 'right' };
+                if (keys[event.key]) { event.preventDefault(); setDirection(keys[event.key]); }
+                if (event.code === 'Space') { event.preventDefault(); togglePause(); }
+            });
+            document.querySelectorAll('.pad button').forEach(button => button.addEventListener('click', () => setDirection(button.dataset.dir)));
+            reset();
+        })();
+    </script>
 </body>
 </html>

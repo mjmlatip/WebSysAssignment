@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+    body { font-family: sans-serif; text-align: center; background: #0f172a; color: white; margin: 0; padding: 15px; }
+    img { width: 120px; height: 120px; filter: brightness(0) invert(1); transition: 0.3s; }
+    img.revealed { filter: none; }
+    input, button { padding: 8px 12px; border-radius: 6px; border: none; margin-top: 8px; }
+    button { background: #38bdf8; color: #0f172a; font-weight: bold; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h3>Who's That Pokémon?</h3>
+  <img id="pokeImg" src="" alt="Mystery Pokemon">
+  <br>
+  <input type="text" id="guess" placeholder="Enter Pokémon name...">
+  <button onclick="checkGuess()">Guess</button>
+  <p id="msg"></p>
+
+  <script>
+    let answer = "";
+    async function loadPokemon() {
+      const id = Math.floor(Math.random() * 1025) + 1;
+      const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      const data = await res.json();
+      answer = data.name.toLowerCase();
+      const img = document.getElementById("pokeImg");
+      img.classList.remove("revealed");
+      img.src = data.sprites.other["official-artwork"].front_default;
+      document.getElementById("msg").textContent = "";
+      document.getElementById("guess").value = "";
+    }
+    function checkGuess() {
+      const val = document.getElementById("guess").value.trim().toLowerCase().replace(/[\s-]/g, "");
+      const cleanAnswer = answer.replace(/[\s-]/g, "");
+      document.getElementById("pokeImg").classList.add("revealed");
+      document.getElementById("msg").textContent = val === cleanAnswer
+        ? `Correct! It's ${answer.toUpperCase()}!`
+        : `Nice try! It was ${answer.toUpperCase()}.`;
+      setTimeout(loadPokemon, 2000);
+    }
+    loadPokemon();
+  </script>
+</body>
+</html>

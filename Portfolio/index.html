@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mohammad Jammael Latip | Portfolio</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <header class="topbar" id="topbar">
+        <a class="logo" href="#home">MJ<span>.</span></a>
+
+        <nav class="links" id="links">
+            <a href="#about">About</a>
+            <a href="#skills">Skills</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </nav>
+
+        <div class="top-buttons">
+            <button class="icon-button" id="themeButton" onclick="toggleTheme()" title="Change theme"><i class="bi bi-moon-fill"></i></button>
+            <button class="icon-button menu-button" onclick="toggleMenu()" title="Menu"><i class="bi bi-list"></i></button>
+        </div>
+    </header>
+
+    <section class="hero" id="home">
+        <div class="hero-text">
+            <p class="label">Hello, I'm</p>
+            <h1>Mohammad Jammael Latip</h1>
+            <h2>I am a <span id="typing"></span><span class="cursor">|</span></h2>
+            <p class="hero-about">I like making cool stuff on my spare time and my current hyperfixation is on making games (you should def play my games). Im a student and currently a member of Ciphers.</p>
+
+            <div class="hero-buttons">
+                <a class="button" href="#projects">View projects</a>
+                <a class="button outline" href="#contact">Contact me</a>
+            </div>
+        </div>
+
+        <div class="hero-photo">
+            <img src="images/MJ.jpg">
+        </div>
+    </section>
+
+    <section class="stats">
+        <div>
+            <h3>5</h3>
+            <p>Games</p>
+        </div>
+        <div>
+            <h3>5</h3>
+            <p>Softwares</p>
+        </div>
+        <div>
+            <h3>2</h3>
+            <p>Websites</p>
+        </div>
+        <div>
+            <h3>∞</h3>
+            <p>Unfinished Projects</p>
+        </div>
+    </section>
+
+    <section class="section" id="about">
+        <p class="label">About me</p>
+        <h2>Lore Drop</h2>
+
+        <div class="about-grid">
+            <div>
+                Hi! I am MJ Latip. I am a 3rd year Information Systems student at Ateneo de Davao University. 
+                    <br><br>
+                My hobbies are playing games, travelling, watching anime or films, reading manga, dancing, and making random stuff or exploring other hobbies/interests
+                    <br><br>
+                I want to become rich while having fun and enjoying life. 
+                So my goal in life is to be happy, be rich, travel the world, and 
+                accomplish as much as i can without compromising anything. 
+            </div>
+
+            <div class="facts">
+                <p><i class="bi bi-mortarboard"></i> Student, Information Systems</p>
+                <p><i class="bi bi-code-slash"></i> Game and Software</p>
+                <p><i class="bi bi-person-circle"></i> Dancer and Traveller</p>
+                <p><i class="bi bi-geo-alt"></i> Philippines</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="section alt" id="skills">
+        <p class="label">Skills</p>
+        <h2>What I work with</h2>
+
+        <div class="skills">
+            <div class="skill">
+                <p>TypeScript <span>45.8%</span></p>
+                <div class="bar"><div class="fill" data-level="45.8"></div></div>
+            </div>
+            <div class="skill">
+                <p>HTML <span>27.5%</span></p>
+                <div class="bar"><div class="fill" data-level="27.5"></div></div>
+            </div>
+            <div class="skill">
+                <p>JavaScript <span>17.9%</span></p>
+                <div class="bar"><div class="fill" data-level="17.9"></div></div>
+            </div>
+            <div class="skill">
+                <p>Python <span>4.8%</span></p>
+                <div class="bar"><div class="fill" data-level="4.8"></div></div>
+            </div>
+            <div class="skill">
+                <p>CSS <span>3.2%</span></p>
+                <div class="bar"><div class="fill" data-level="3.2"></div></div>
+            </div>
+            <div class="skill">
+                <p>PLpgSQL <span>0.7%</span></p>
+                <div class="bar"><div class="fill" data-level="0.7"></div></div>
+            </div>
+            <div class="skill">
+                <p>PowerShell <span>0.1%</span></p>
+                <div class="bar"><div class="fill" data-level="0.1"></div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="projects">
+        <p class="label">Projects</p>
+        <h2>Things I've made</h2>
+
+        <div class="filters">
+            <button class="filter active" onclick="filterProjects('all', this)">All</button>
+            <button class="filter" onclick="filterProjects('website', this)">Websites</button>
+            <button class="filter" onclick="filterProjects('game', this)">Games</button>
+            <button class="filter" onclick="filterProjects('software', this)">Software</button>
+        </div>
+
+        <p class="gray" id="noProjects" style="display: none;">No projects in this group yet.</p>
+
+        <div class="project-grid" id="projectGrid">
+
+            <article class="project" data-type="game">
+                <img class="project-thumb" src="images/Drifters.png">
+                <div class="project-info">
+                    <h3>Drifters</h3>
+                    <p>CURRENTLY WORKING ON RIGHT NOW. Basically similar to Shadow fight. A duel 
+                        "who hits faster wins" type of game that is very gory. Homage to the anime "Drifters"</p>
+                    <a href="https://chips-codehub.vercel.app/drifters" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="website">
+                <img class="project-thumb" src="images/CodeHub.png">
+                <div class="project-info">
+                    <h3>CodeHub</h3>
+                    <p>A website that contains all my works that can be accessed in a browser and downloaded. Roblox games are excluded.</p>
+                    <a href="https://chips-codehub.vercel.app/" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="game">
+                <img class="project-thumb" src="images/Anomaly.png">
+                <div class="project-info">
+                    <h3>Anomaly</h3>
+                    <p>Rogue-Like game. I love that genre so much that i made one myself and a direct reference to 
+                        Slay the Spire. First game i actually finished (semi)</p>
+                    <a href="https://chips-codehub.vercel.app/elevator" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="game">
+                <img class="project-thumb" src="images/DieTrying.png">
+                <div class="project-info">
+                    <h3>DieTrying</h3>
+                    <p>Tower defence game, i drew inspiration from existing game called "We have an orc problem, sir". Fun game that taught me about graphics in pixel art</p>
+                    <a href="https://chips-codehub.vercel.app/dietrying/" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="website">
+                <img class="project-thumb" src="images/Tcsms.png">
+                <div class="project-info">
+                    <h3>Tcsms</h3>
+                    <p>Our current project for Software Engineering. Basically Addu's SIS but on another school.</p>
+                    <a href="https://tcsms.vercel.app/" target="_blank">Open site <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="software">
+                <img class="project-thumb" src="images/QscanR.png">
+                <div class="project-info">
+                    <h3>QscanR</h3>
+                    <p>Software i made that i actually use from time to time. Basically share-it or airdrop but for any devices that can scan qr codes.
+                        Useful since idk if i can trust those online ones or those apps. also works offline.
+                    </p>
+                    <a href="https://chips-codehub.vercel.app/qsendr" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+                     <article class="project" data-type="software">
+                <img class="project-thumb" src="images/Collage.png">
+                <div class="project-info">
+                    <h3>Collage</h3>
+                    <p>I was too lazy to find free collage apps on the app store and the free ones take too many steps.
+                        so i made one myself thats easier to use for me and can collage in bulk.
+                    </p>
+                    <a href="https://chips-codehub.vercel.app/collage" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="game">
+                <img class="project-thumb" src="images/Friendio.png">
+                <div class="project-info">
+                    <h3>Friendio</h3>
+                    <p>I wanted to make my own mobile game for those friend slop games 
+                        that is multiplayer and is not banned by the school wifi.</p>
+                    <a href="https://chips-codehub.vercel.app/friendio" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+            
+            <article class="project" data-type="game">
+                <img class="project-thumb" src="images/Kindered.png">
+                <div class="project-info">
+                    <h3>Kindered</h3>
+                    <p>Unfinished project. Its basically a copy of a game from JackBox called Trivia Murder Party.
+                    I wanted to make one so that i can play it with friends during sa Layover namin sa Manila to Japan.
+               
+                    </p>
+                    <a href="https://chips-codehub.vercel.app/Kindered" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+              <article class="project" data-type="software">
+                <img class="project-thumb" src="images/FairsHare.png">
+                <div class="project-info">
+                    <h3>FairsHare</h3>
+                    <p>I wanted to make a simple software to make it easier for me and my friends to track our debts.
+                         Since that part was hectic and we tend to forget what we owe each other.
+                    </p>
+                    <a href="https://chips-codehub.vercel.app/FairsHare" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="software">
+                <img class="project-thumb" src="images/VideoDownloader.png">
+                <div class="project-info">
+                    <h3>VideoDownloader</h3>
+                    <p>Its a simple extension for chrome that detects a video on the site and allows you to download it.
+                        I got too lazy to download videos from sites that dont allow it so i made this. Like those pirated movie sites.
+                    </p>
+                    <a href="https://chips-codehub.vercel.app/" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+            <article class="project" data-type="software">
+                <img class="project-thumb" src="images/Volume.png">
+                <div class="project-info">
+                    <h3>Volume</h3>
+                    <p>An software app i made for my mom that tweaks the volume of your system. Its like the VLC 500% volume but not on VLC. This is so that she can hear google meetings better.</p>
+                    <a href="https://chips-codehub.vercel.app/" target="_blank">View project <i class="bi bi-arrow-up-right"></i></a>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+    <section class="section alt" id="contact">
+        <p class="label">Contact</p>
+        <h2>Let's talk</h2>
+
+        <div class="contact-grid">
+            <div>
+                <p>Got a question or want to work together? Send me a message or find me here.</p>
+
+                <div>
+                <h3 style="padding-bottom: 10px; text-decoration: underline;">School Contacts</h3>
+                <p class="contact-line"><i class="bi bi-envelope"></i> mjmlatip@addu.edu.ph</a></p>
+                <p class="contact-line"><i class="bi bi-github"></i> github.com/mjmlatip</a></p><br>
+
+                <h3 style="padding-bottom: 10px; text-decoration: underline;">Developer Contacts</h3>
+                <p class="contact-line"><i class="bi bi-envelope"></i> omnipotentchips@gmail.com</a></p>
+                <p class="contact-line"><i class="bi bi-github"></i> github.com/omnichips</a></p>
+                </div>
+
+                <p style="font-size: 10px; padding-top: 10px; text-decoration: underline;">
+                    https://www.w3schools.com/howto/howto_js_typewriter.asp
+
+                    https://www.w3schools.com/howto/howto_js_toggle_dark_mode.asp
+
+                    https://www.w3schools.com/howto/howto_css_skill_bar.asp
+
+                    https://www.w3schools.com/howto/howto_js_filter_elements.asp
+
+                    https://www.w3schools.com/howto/howto_js_scroll_to_top.asp
+                
+                </p>
+                </div>
+
+            <form>
+                <label for="name">Name</label>
+                <input type="text" id="name">
+
+                <label for="email">Email</label>
+                <input type="text" id="email">
+
+                <label for="message">Message</label>
+                <textarea id="message" rows="5"></textarea>
+
+                <button class="button" type="button">Send message</button>
+            </form>
+        </div>
+    </section>
+
+    <button class="to-top" id="toTop" onclick="goTop()" title="Back to top"><i class="bi bi-arrow-up"></i></button>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
